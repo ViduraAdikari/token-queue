@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react';
 import Box from "@mui/material/Box";
 import {Navigate} from 'react-router-dom';
 import MainInputForm from "../components/deck/cartons/forms/MainInputForm";
-import DashboardContainer from "../components/deck/elements/containers/DashboardContainer";
+import HomeContainer from "../components/deck/elements/containers/HomeContainer";
 import Hero from "../components/deck/cartons/hero/Hero";
 import {TOKEN_ROUTE_PATHS} from "../routes/routePaths";
 import {useAppDispatch, useAppSelector} from "../store/hooks/hooks";
-import {setGuestPhone} from "../store/reducers/tokenQueueReducer";
+import {setGuestPhone, resetGuest} from "../store/reducers/tokenQueueReducer";
 import {IGuest} from "../store/types/tokenQueueReducerTypes";
 
 const GuestHome: React.FC = () => {
@@ -14,7 +14,11 @@ const GuestHome: React.FC = () => {
   const [isRedirect, setIsRedirect] = useState(false);
 
   const guest: IGuest | null = useAppSelector(state => state.tokenQueue.guest);
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(resetGuest({}));
+  }, []);
 
   useEffect(() => {
     if (!guest || guest.phone !== phone) {
@@ -25,7 +29,7 @@ const GuestHome: React.FC = () => {
   }, [guest]);
 
   const redirectToTokenDashboard = () => {
-    return <Navigate to={TOKEN_ROUTE_PATHS.TOKEN_DASHBOARD}/>;
+    return <Navigate to={TOKEN_ROUTE_PATHS.TOKEN_DASHBOARD.main}/>;
   }
 
   const handlePhoneChange = (phoneNumber: string) => {
@@ -39,7 +43,7 @@ const GuestHome: React.FC = () => {
   }
 
   return (
-    <DashboardContainer>
+    <HomeContainer>
       {isRedirect && redirectToTokenDashboard()}
 
       <Box sx={{
@@ -60,7 +64,7 @@ const GuestHome: React.FC = () => {
                        onValueChange={handlePhoneChange}
                        onSubmitClick={handleSubmit}/>
       </Box>
-    </DashboardContainer>
+    </HomeContainer>
   )
 };
 
