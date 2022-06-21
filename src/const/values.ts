@@ -12,3 +12,5 @@ export const BackgroundColors = {
   TurkishAqua: '#006266',
   RadiantYellow: '#F79F1F',
 }
+
+export const DRAWER_WIDTH = 240;
