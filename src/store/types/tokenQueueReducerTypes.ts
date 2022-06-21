@@ -8,6 +8,7 @@ interface IGuest {
 
 interface ITokenState {
   guest: IGuest | null
+  newTokenServiceID: string | null
 }
 
 export type {ITokenState, IGuest}

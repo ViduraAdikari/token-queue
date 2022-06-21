@@ -3,31 +3,32 @@ import {blueGrey, grey} from "@mui/material/colors";
 
 const makeResponsive = (theme: Theme): Theme => {
   theme.typography.h1 = {
-    fontSize: '3.5rem',
+    fontSize: '3rem',
     [theme.breakpoints.down("lg")]: {
-      fontSize: '3.3rem'
+      fontSize: '2.8rem'
     },
     [theme.breakpoints.down("md")]: {
-      fontSize: '3rem'
+      fontSize: '2.5rem'
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: '1.9rem',
+      fontSize: '1.5rem',
       fontWeight: 500
     },
+    color: theme.palette.mode === 'light' ? blueGrey[600] : grey[400],
     fontWeight: 600
   }
 
   theme.typography.h2 = {
-    fontSize: '2.4rem',
+    fontSize: '2rem',
     fontWeight: 400,
     [theme.breakpoints.down("lg")]: {
-      fontSize: '2.2rem'
+      fontSize: '1.7rem'
     },
     [theme.breakpoints.down("md")]: {
       fontSize: '1.5rem'
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: '1.2rem',
+      fontSize: '1.1rem',
     },
     color: theme.palette.mode === 'light' ? blueGrey[400] : grey[500],
   }
