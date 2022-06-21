@@ -4,7 +4,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {getTheme} from "../util/theme/Theme";
 import CustomProviderNavBar from "../components/deck/cartons/navbar/CustomProviderNavBar";
-import {TokenQueueRoutes} from "../routes/routes";
+import {AppRoute, TokenQueueRoutes} from "../routes/routes";
+import {getNestedRoute} from "../util/routing";
 
 type HomeProps = {
   prefersDarkMode: boolean
@@ -28,11 +29,12 @@ const Layout: React.FC<HomeProps> = (props: PropsWithChildren<HomeProps>) => {
     return getTheme(isDark ? 'dark' : 'light');
   }, [isDark]);
 
-  const menu = TokenQueueRoutes.map(route => <Route key={route.path} path={route.path}
-                                                    element={<Suspense fallback={<div>loading...</div>}>
-                                                      {<route.component/>}
-                                                    </Suspense>
-                                                    }/>);
+  const menu = TokenQueueRoutes.map((route: AppRoute) => route.nestedRoutes ? getNestedRoute(route) :
+    <Route key={route.path} path={route.path}
+           element={<Suspense fallback={<div>loading...</div>}>
+             {<route.component/>}
+           </Suspense>
+           }/>);
 
   return (
     <ThemeProvider theme={theme}>

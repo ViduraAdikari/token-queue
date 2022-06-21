@@ -1,22 +1,22 @@
 import React from 'react';
 import Container from "@mui/material/Container";
 
-type DashboardContainerProps = {
+type HomeContainerProps = {
   children: React.ReactNode
 }
 
-const DashboardContainer: React.FC<DashboardContainerProps> = (props: DashboardContainerProps) => {
+const HomeContainer: React.FC<HomeContainerProps> = (props: HomeContainerProps) => {
 
   const {children} = props;
 
   return (
     <Container maxWidth="lg" sx={{
-      px: 3,
-      py: 3,
+      px: 4,
+      py: 5,
     }}>
       {children}
     </Container>
   )
 };
 
-export default DashboardContainer;
+export default HomeContainer;
