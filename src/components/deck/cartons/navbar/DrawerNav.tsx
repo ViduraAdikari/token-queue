@@ -4,7 +4,6 @@ import DrawerHeaderElement from "../../elements/drawer/DrawerHeaderElement";
 import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Drawer from "@mui/material/Drawer";
 import {Theme} from "@mui/material/styles";
@@ -31,10 +30,6 @@ const DrawerNav: React.FC<DrawerNavProps> = (props: DrawerNavProps) => {
     onDrawerClose();
   };
 
-  let activeStyle = {
-    textDecoration: "underline",
-  };
-
   const renderNavItems = () => {
     if (!drawerNavItems) {
       return <Box sx={{px: 3}}>No links here yet...</Box>;
@@ -53,8 +48,8 @@ const DrawerNav: React.FC<DrawerNavProps> = (props: DrawerNavProps) => {
               color: theme => theme.palette.text.primary,
             }
           }}>
-            <NavLink to={navItem.path} >
-              <ListItemText primary={'#' + navItem.label} sx={{px: 1}}/>
+            <NavLink to={navItem.path}>
+              <ListItemText primary={navItem.label} sx={{px: 1}}/>
             </NavLink>
           </ListItem>
         ))}

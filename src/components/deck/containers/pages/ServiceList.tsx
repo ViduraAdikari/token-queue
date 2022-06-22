@@ -17,13 +17,13 @@ const ServiceList: React.FC = () => {
     setIsRedirect(true);
   }
 
-  const redirectToTokenDashboard = () => {
+  const redirectToHome = () => {
     return <Navigate to={TOKEN_ROUTE_PATHS.GUEST_LOGIN}/>;
   }
 
   return (
     <DashboardContainer>
-      {isRedirect && redirectToTokenDashboard()}
+      {isRedirect && redirectToHome()}
 
       <Stack direction="column" sx={{
         alignItems: "center"
@@ -36,7 +36,7 @@ const ServiceList: React.FC = () => {
 
         <Services/>
         <Stack sx={{mt: 5, pt: 5, alignItems: 'center'}}>
-          {/*<LoadingMessage message="services"/>*/}
+          {/*<LoadingMessage message="Loading services"/>*/}
           <CurrentUser/>
           <PageLink text="Change Phone Number" onClick={handleOnPhoneChangeClick}/>
         </Stack>

@@ -17,6 +17,7 @@ export const tokenSlice: Slice = createSlice({
     },
     resetGuest: (state: ITokenState) => {
       state.guest = null;
+      state.newTokenServiceID = null;
     },
     setNewTokenServiceID: (state: ITokenState, action: PayloadAction<INewTokenServiceIDPayload>) => {
       state.newTokenServiceID = action.payload.serviceID;
@@ -29,6 +30,7 @@ export const {
   setGuestPhone,
   resetGuest,
   setNewTokenServiceID,
+  setTokenIssued,
 } = tokenSlice.actions;
 
 export default tokenSlice.reducer;
