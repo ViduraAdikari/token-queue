@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {useTheme} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import DrawerAppBar from "../../cartons/drawer/DrawerAppBar";
 import DrawerNav, {DrawerNavItem} from "../../cartons/navbar/DrawerNav";
-import {Navigate, Outlet} from "react-router-dom";
-import {TOKEN_ROUTE_PATHS} from "../../../../routes/routePaths";
+import {Outlet} from "react-router-dom";
+import {NestedRoutePath, TOKEN_ROUTE_PATHS} from "../../../../routes/routePaths";
+import {NestedRoute} from "../../../../routes/routes";
 
 const DashboardDrawer: React.FC = () => {
   const theme = useTheme();
@@ -25,18 +26,21 @@ const DashboardDrawer: React.FC = () => {
   }
   drawerNavItems.push(servicesListItem);
 
-  for (const nestedRoute in TOKEN_ROUTE_PATHS.TOKEN_DASHBOARD.nested) {
+  const dashboardNestedRoutes: NestedRoutePath = TOKEN_ROUTE_PATHS.TOKEN_DASHBOARD.nested;
+  for (const [key, nestedRoute] of Object.entries(dashboardNestedRoutes)) {
+    if (!nestedRoute.isNavLink) {
+      continue;
+    }
+
     const drawerNavItem: DrawerNavItem = {
-      path: TOKEN_ROUTE_PATHS.TOKEN_DASHBOARD.main + '/' + nestedRoute,
-      label: nestedRoute
+      path: TOKEN_ROUTE_PATHS.TOKEN_DASHBOARD.main + '/' + nestedRoute.path,
+      label: nestedRoute.label
     }
     drawerNavItems.push(drawerNavItem);
   }
 
   return (
     <Box sx={{display: 'flex', mt: 0}}>
-      {/*{navigateTo && <Navigate to={navigateTo}/>}*/}
-
       <DrawerAppBar open={open} onDrawerOpen={handleDrawerOpen}/>
 
       <Box

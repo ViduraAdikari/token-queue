@@ -10,7 +10,7 @@ const LoadingMessage: React.FC<LoadingMessageProps> = (props: PropsWithChildren<
   const {message} = props;
   
   return (
-    <Typography>Loading {message}...</Typography>
+    <Typography>{message}...</Typography>
   )
 };
 
