@@ -8,7 +8,7 @@ export type AvatarIcon = {
   alt?: string
 }
 
-export interface IServiceDetails {
+export interface IService {
   id: string
   icon: IconTypes
   title: string

@@ -2,7 +2,7 @@ import React from "react";
 import ArticleIcon from "@mui/icons-material/Article";
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import GroupsIcon from '@mui/icons-material/Groups';
-import {IServiceDetails} from "../types/uiTypes";
+import {IService} from "../types/uiTypes";
 
 export type IconTypes = 'document' | 'payment' | 'meet';
 
@@ -16,7 +16,7 @@ const serviceIconMap: IconMap<React.ReactNode> = {
   meet: <GroupsIcon/>
 }
 
-export const AVAILABLE_SERVICES: IServiceDetails[] = [
+export const AVAILABLE_SERVICES: IService[] = [
   {
     id: '1',
     icon: 'document',
