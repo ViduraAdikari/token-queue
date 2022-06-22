@@ -1,6 +1,17 @@
-const DASHBOARD_NESTED = {
-  queue: 'queue',
-  agent: 'agent',
+interface INestedRoute {
+  path: string
+  label: string
+  isNavLink: boolean
+}
+
+export type NestedRoutePath = {
+  [key: string]: INestedRoute
+}
+
+const DASHBOARD_NESTED: NestedRoutePath = {
+  token: {path: 'get-a-token', label: 'Get a Token', isNavLink: false},
+  queue: {path: 'queue', label: 'Display Queue' ,isNavLink: true},
+  agent: {path: 'agent', label: 'Agent Counter', isNavLink: true},
 }
 
 export const TOKEN_ROUTE_PATHS = {
