@@ -34,7 +34,6 @@ const Token: React.FC<TokenProps> = (props: TokenProps) => {
     }}>
       <TokenTitle title="token"/>
       <TokenTypo text={`Appointment for ${token.appointmentFor}`}/>
-      {/*<TokenTypo text={`Token time: June 22, 2022 01:15pm`}/>*/}
       <TokenTypo text={`Token time: ${formattedDate}`}/>
 
       <Box sx={{py: 2}}>
