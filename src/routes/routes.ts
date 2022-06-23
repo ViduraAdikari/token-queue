@@ -4,7 +4,7 @@ import GuestHome from "../view/GuestHome";
 
 const DashboardDrawer = React.lazy(() => import("../components/deck/containers/drawer/DashboardDrawer"));
 const ServiceList = React.lazy(() => import("../components/deck/containers/pages/ServiceList"));
-const TestQueue = React.lazy(() => import("../components/deck/containers/pages/TestQueue"));
+const DisplayQueue = React.lazy(() => import("../components/deck/containers/pages/DisplayQueue"));
 const TestServices = React.lazy(() => import("../components/deck/containers/pages/TestServices"));
 const GetAToken = React.lazy(() => import("../components/deck/containers/pages/GetAToken"));
 
@@ -27,7 +27,7 @@ export const TokenQueueRoutes: AppRoute[] = [
     path: TOKEN_ROUTE_PATHS.TOKEN_DASHBOARD.main, component: DashboardDrawer, nestedRoutes: [
       {index: true, isNavLink: true, component: ServiceList},
       {...TOKEN_ROUTE_PATHS.TOKEN_DASHBOARD.nested.token, component: GetAToken},
-      {...TOKEN_ROUTE_PATHS.TOKEN_DASHBOARD.nested.queue, component: TestQueue},
+      {...TOKEN_ROUTE_PATHS.TOKEN_DASHBOARD.nested.queue, component: DisplayQueue},
       {...TOKEN_ROUTE_PATHS.TOKEN_DASHBOARD.nested.agent, component: TestServices},
     ]
   },

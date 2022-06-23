@@ -16,8 +16,7 @@ const CustomProviderNavBar: React.FC<CustomProviderNavBarProps> =
     <Stack direction='row'
       sx={{
         justifyContent: 'flex-end',
-        paddingBottom: '.6em',
-        borderBottom: '1px solid #607D8B',
+        paddingBottom: '.5em',
         position: 'fixed',
         width: '100%',
         zIndex: 1500,

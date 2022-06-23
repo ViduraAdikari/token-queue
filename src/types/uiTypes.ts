@@ -1,4 +1,4 @@
-import {IconTypes} from "../const/services";
+import {IToken} from "./types";
 
 export type HeadingTypes = 'h1' | 'h2';
 
@@ -8,8 +8,12 @@ export type AvatarIcon = {
   alt?: string
 }
 
-export interface IService {
-  id: string
-  icon: IconTypes
-  title: string
+export interface IGridRow {
+  token: number
+  counter: string
+  isNew?: boolean
+}
+
+export type AssignedTokensGroup = {
+  [key: string]: IToken[]
 }

@@ -64,14 +64,14 @@ export const lightThemeOptions: ThemeOptions = {
     },
     primary: {
       main: teal[500],
-      light: cyan[500],
+      light: cyan[600],
       dark: cyan[800],
       contrastText: grey[50]
     },
     secondary: {
       main: cyan[600],
       light: cyan[600],
-      dark: teal[600],
+      dark: cyan[900],
       contrastText: teal[400]
     },
     common: {
