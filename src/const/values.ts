@@ -15,5 +15,8 @@ export const BackgroundColors = {
 
 export const DRAWER_WIDTH = 240;
 
+//if 4 leading zeros will be added to make the display look four digits
+export const TOKEN_DISPLAY_LENGTH = 4;
+
 export const TOKEN_CONDITIONS: string = `You have to obtain a new token if you were not present at the counter when 
 it was displayed.`;

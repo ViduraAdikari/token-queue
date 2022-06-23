@@ -1,6 +1,7 @@
 import React from 'react';
 import Typography from "@mui/material/Typography";
 import {addLeadingZeros} from "../../../../util/util";
+import {TOKEN_DISPLAY_LENGTH} from "../../../../const/values";
 
 type TokenNumberProps = {
   tokenNumber: number
@@ -17,7 +18,7 @@ const TokenNumber: React.FC<TokenNumberProps> = (props: TokenNumberProps) => {
       fontWeight: 700,
       mb: 2
     }}>
-      {addLeadingZeros(tokenNumber, 4)}
+      {addLeadingZeros(tokenNumber, TOKEN_DISPLAY_LENGTH)}
     </Typography>
 
   )

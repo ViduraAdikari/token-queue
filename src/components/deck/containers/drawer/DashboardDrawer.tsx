@@ -45,7 +45,7 @@ const DashboardDrawer: React.FC = () => {
 
       <Box
         component="main"
-        sx={{mt: 5, pt: 5, width: '100%', overflow: "hidden"}}
+        sx={{mt: 5, pt: 5, width: '100%'}}
       >
         <Outlet/>
       </Box>

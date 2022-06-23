@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import Grid from "@mui/material/Grid";
 import ServiceCard from "../../cartons/cards/ServiceCard";
-import {AVAILABLE_SERVICES, serviceIconMap} from "../../../../const/services";
-import {IService} from "../../../../types/uiTypes";
+import {serviceIconMap} from "../../../../const/services";
 import {useAppDispatch} from "../../../../store/hooks/hooks";
 import {setNewTokenServiceID} from "../../../../store/reducers/tokenQueueReducer";
 import {Navigate} from "react-router-dom";
 import {TOKEN_ROUTE_PATHS} from "../../../../routes/routePaths";
+import {IService} from "../../../../types/types";
+import {AVAILABLE_SERVICES} from "../../../../const/sampleData";
 
 const Services: React.FC = () => {
   const [isRedirect, setIsRedirect] = useState(false);

@@ -1,4 +1,6 @@
 import moment from "moment";
+import {IToken} from "../types/types";
+import {AssignedTokensGroup} from "../types/uiTypes";
 
 /**
  * format Date to given date time format string
@@ -24,3 +26,14 @@ export const addLeadingZeros = (num: number, size: number): string => {
   return withZeros.substring(withZeros.length - size);
 }
 
+/**
+ * group assigned tokens by service
+ * @param tokens
+ */
+export const groupByServiceID = (tokens: IToken[]) => {
+  const groupedTokens: AssignedTokensGroup = {};
+  return tokens.reduce((group: AssignedTokensGroup, token: IToken) => {
+    (group[token.serviceID] = group[token.serviceID] || []).push(token);
+    return group;
+  }, groupedTokens);
+}
