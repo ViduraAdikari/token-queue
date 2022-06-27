@@ -8,6 +8,7 @@ import {TOKEN_ROUTE_PATHS} from "../routes/routePaths";
 import {useAppDispatch, useAppSelector} from "../store/hooks/hooks";
 import {setGuestPhone, resetGuest} from "../store/reducers/tokenQueueReducer";
 import {IGuest} from "../store/types/tokenQueueReducerTypes";
+import Grid from "@mui/material/Grid";
 
 const GuestHome: React.FC = () => {
   const [phone, setPhone] = useState<string | null>(null);
@@ -53,16 +54,23 @@ const GuestHome: React.FC = () => {
       }}>
         <Hero/>
 
-        <MainInputForm buttonText="Next"
-                       value={phone}
-                       inputTextProps={{
-                         name: 'phone',
-                         label: 'Enter your phone number',
-                         placeholder: 'phone number',
-                         invalidInputMessage: 'A phone number required to begin.'
-                       }}
-                       onValueChange={handlePhoneChange}
-                       onSubmitClick={handleSubmit}/>
+        <Grid container sx={{
+          justifyContent: 'center',
+          mt: 5,
+        }}>
+          <Grid item md={5} sm={8} xs={12}>
+            <MainInputForm buttonText="Next"
+                           value={phone}
+                           inputTextProps={{
+                             name: 'phone',
+                             label: 'Enter your phone number',
+                             placeholder: 'phone number',
+                             invalidInputMessage: 'A phone number required to begin.'
+                           }}
+                           onValueChange={handlePhoneChange}
+                           onSubmitClick={handleSubmit}/>
+          </Grid>
+        </Grid>
       </Box>
     </HomeContainer>
   )

@@ -30,7 +30,10 @@ const Token: React.FC<TokenProps> = (props: TokenProps) => {
       display: 'flex',
       flexDirection: 'column',
       alignItems: "center",
-      color: '#000000'
+      color: '#000000',
+      '& p': {
+        color: '#000000',
+      }
     }}>
       <TokenTitle title="token"/>
       <TokenTypo text={`Appointment for ${token.appointmentFor}`}/>

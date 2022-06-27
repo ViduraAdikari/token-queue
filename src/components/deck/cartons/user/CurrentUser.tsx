@@ -6,8 +6,14 @@ import Typography from "@mui/material/Typography";
 import Avatar from "../../elements/avatars/Avatar";
 import NameLabel from "../../elements/labels/NameLabel";
 
-const CurrentUser: React.FC = () => {
+type CurrentUserProps = {
+  label?: string
+}
+
+const CurrentUser: React.FC<CurrentUserProps> = (props: CurrentUserProps) => {
   const guest: IGuest | null = useAppSelector(state => state.tokenQueue.guest);
+
+  const {label} = props;
 
   if (!guest) {
     return <React.Fragment/>;
@@ -19,7 +25,7 @@ const CurrentUser: React.FC = () => {
 
       <Stack direction="row" spacing={2}>
         {guest.avatar && <Avatar avatarIcon={guest.avatar}/>}
-        <NameLabel text={guest.phone}/>
+        <NameLabel text={label ? label: guest.phone}/>
       </Stack>
 
     </Stack>

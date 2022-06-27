@@ -15,9 +15,10 @@ export interface ICounter {
 }
 
 export interface IToken {
+  id: string
+  tokenNumber: number
   serviceID: string
   counterID?: string
-  tokenNumber: number
   time: Date
   customer?: IGuest //:TODO cannot be undefined when connected to api
 }
