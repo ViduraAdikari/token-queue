@@ -14,7 +14,6 @@ const TokenTypo: React.FC<TokenTypoProps> = (props: TokenTypoProps) => {
     <Typography variant="body2" sx={{
       fontSize: '1em',
       lineHeight: 1.5,
-      color: '#000000',
       textAlign: 'center',
       mb: marginBottom
     }}>

@@ -14,7 +14,6 @@ const TokenNumber: React.FC<TokenNumberProps> = (props: TokenNumberProps) => {
   return (
     <Typography variant="h3" sx={{
       fontSize: '2.2em',
-      color: '#000000',
       fontWeight: 700,
       mb: 2
     }}>
