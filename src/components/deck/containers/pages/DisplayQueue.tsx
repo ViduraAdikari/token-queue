@@ -1,54 +1,29 @@
 import React from 'react';
-import GridHeading from "../../cartons/labels/GridHeading";
-import Stack from "@mui/material/Stack";
-import {IToken} from "../../../../types/types";
-import {SAMPLE_ASSIGNED_TOKENS} from "../../../../const/sampleData";
-import AssignedTokensInService from "../../pallet/queue/AssignedTokensInService";
-import {AssignedTokensGroup, IGridRow} from "../../../../types/uiTypes";
-import {groupByServiceID} from "../../../../util/util";
-
-//sort token numbers desc
-const sortByTokenNum = (gridRowA: IGridRow, gridRowB: IGridRow) => {
-  return gridRowA.token < gridRowB.token ? 1 : -1;
-}
+import {useAppSelector} from "../../../../store/hooks/hooks";
+import ErrorMessage from "../../elements/error/ErrorMessage";
+import AssignedTokens from "../../pallet/queue/AssignedTokens";
+import {IService, IToken} from "../../../../types/types";
+import CheckAssignedTokens from "../../pallet/queue/CheckAssignedTokens";
 
 const DisplayQueue: React.FC = () => {
+  const tokens: IToken[] | null = useAppSelector(state => state.tokenQueue.assignedTokens);
+  const services: IService[] | null = useAppSelector(state => state.tokenQueue.services);
 
-  const groupedTokensByService: AssignedTokensGroup = groupByServiceID(SAMPLE_ASSIGNED_TOKENS);
+  const renderCheckAssignedTokens = () => {
+    if (!services) {
+      return;
+    }
 
-  const getRowsInGroup = (tokens: IToken[]): IGridRow[] => {
-    return tokens.map((token: IToken) => {
-      const row: IGridRow = {token: token.tokenNumber, counter: token.counterID || ''};
-      return row;
-    }).sort(sortByTokenNum);
-  }
-
-  // merge all group rows
-  // groups are automatically sorted in the object because serviceIDs are "1", "2", "3"..
-  const renderGroups = () => {
-    let allRows: IGridRow[] = [];
-    Object.entries(groupedTokensByService).map(([key, tokens]) => {
-      allRows = allRows.concat(getRowsInGroup(tokens))
-    });
-
-    //for test highlight new assign
-    allRows[0].isNew = true;
-
-    return <AssignedTokensInService rows={allRows}/>;
+    return services.map((service: IService) => <CheckAssignedTokens key={service.id} serviceID={service.id}/>);
   }
 
   return (
-    <Stack spacing={1} sx={{
-      pt: 3, pb: 1,
-      mt: 1, px: 1,
-      height: 'calc(100vh - 90px)',
-    }}>
-      <GridHeading/>
+    <React.Fragment>
+      {!tokens && <ErrorMessage message={'Waiting for customers!'}/>}
+      {tokens && <AssignedTokens tokens={tokens}/>}
 
-      <Stack spacing={1} sx={{flex: '1'}}>
-        {renderGroups()}
-      </Stack>
-    </Stack>
+      {renderCheckAssignedTokens()}
+    </React.Fragment>
   )
 };
 
