@@ -10,7 +10,7 @@ export interface IService {
 export interface ICounter {
   id: string
   serviceID: string
-  servingToken: string | null
+  servingToken: IToken | null
   isServing: boolean
 }
 
@@ -20,7 +20,8 @@ export interface IToken {
   serviceID: string
   counterID?: string
   time: Date
-  customer?: IGuest //:TODO cannot be undefined when connected to api
+  customer: IGuest
+  served: boolean
 }
 
 export interface IDisplayToken extends IToken {
