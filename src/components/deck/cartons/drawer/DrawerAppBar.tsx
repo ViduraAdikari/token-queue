@@ -45,6 +45,9 @@ const DrawerAppBar: React.FC<DrawerAppBarProps> = (props: DrawerAppBarProps) => 
   return (
     <AppBar sx={{
       mt: 5,
+      '@media print': {
+        display: 'none',
+      },
     }} open={open}>
       <Toolbar>
         <Typography variant="h6" noWrap sx={{flexGrow: 1}} component="div">

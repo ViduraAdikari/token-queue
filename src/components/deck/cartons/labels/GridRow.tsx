@@ -27,7 +27,7 @@ const GridRow: React.FC<GridRowProps> = (props: GridRowProps) => {
     const timeout = setTimeout(() => {
       setIsNewAssign(false);
       clearTimeout(timeout);
-    }, 2000);
+    }, 3000);
   }, [isNewAssign]);
 
   const tokenFormatted: string = addLeadingZeros(row.token, TOKEN_DISPLAY_LENGTH);
