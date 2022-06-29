@@ -31,7 +31,7 @@ const PrintToken: React.FC = () => {
     const timeout = setTimeout(() => {
       clearTimeout(timeout);
       setIsRedirecting(true);
-    }, 2500);
+    }, 500);
 
   }, [isPrinting]);
 
@@ -51,6 +51,9 @@ const PrintToken: React.FC = () => {
               width: '400px',
               maxWidth: '98%',
               py: 2,
+              '@media print': {
+                display: 'none',
+              }
             }}>
       {isRedirect && redirectToHome()}
 

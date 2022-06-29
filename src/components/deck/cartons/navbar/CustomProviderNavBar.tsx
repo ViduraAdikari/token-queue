@@ -10,21 +10,25 @@ type CustomProviderNavBarProps = {
 const CustomProviderNavBar: React.FC<CustomProviderNavBarProps> =
   (props: PropsWithChildren<CustomProviderNavBarProps>) => {
 
-  const {prefersDarkMode} = props;
+    const {prefersDarkMode} = props;
 
-  return (
-    <Stack direction='row'
-      sx={{
-        justifyContent: 'flex-end',
-        paddingBottom: '.5em',
-        position: 'fixed',
-        width: '100%',
-        zIndex: 1500,
-        bgcolor: theme => theme.palette.background.default,
-      }}>
-      <ThemeSwitch onChange={props.onThemeChange} defaultChecked={prefersDarkMode}/>
-    </Stack>
-  )
-};
+    return (
+      <Stack direction='row'
+             sx={{
+               justifyContent: 'flex-end',
+               paddingBottom: '.5em',
+               position: 'fixed',
+               width: '100%',
+               zIndex: 1500,
+               borderBottom: '1px solid #607D8B',
+               bgcolor: theme => theme.palette.background.default,
+               '@media print': {
+                 display: 'none',
+               }
+             }}>
+        <ThemeSwitch onChange={props.onThemeChange} defaultChecked={prefersDarkMode}/>
+      </Stack>
+    )
+  };
 
 export default CustomProviderNavBar;
