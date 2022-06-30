@@ -14,6 +14,7 @@ const DisplayQueue: React.FC = () => {
       return;
     }
 
+    //check assigned tokens for each service.
     return services.map((service: IService) => <CheckAssignedTokens key={service.id} serviceID={service.id}/>);
   }
 

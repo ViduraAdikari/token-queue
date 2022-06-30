@@ -25,6 +25,8 @@ it was displayed.`;
 
 export const ERROR_UNABLE_TO_FIND_SERVICE = 'unable to find the service';
 
+export const DEFAULT_GUEST_PHONE = '+94716331433';
+
 export const TOKEN_REQUESTS = {
   services: SERVER_URL + '/services',
   counters: SERVER_URL + '/counters',

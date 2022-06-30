@@ -26,7 +26,7 @@ const CellLabel: React.FC<CellLabelProps> = (props: CellLabelProps) => {
         textTransform: 'uppercase',
         textAlign: "center",
         flex: '1',
-        fontSize: '4em',
+        fontSize: {lg: '2.5em', xl: '4em'},
         fontWeight: 700,
         color: '#f1f1f1',
       }}>
