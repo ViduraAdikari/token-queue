@@ -22,7 +22,7 @@ const GridHeadingLabel: React.FC<GridHeadingLabelProps> = (props: GridHeadingLab
       <Typography sx={{
         textTransform: 'uppercase',
         textAlign: "center",
-        fontSize: '2em',
+        fontSize: {lg: '1.5em', xl: '2em'},
         color: '#f1f1f1',
       }}>
         {text}

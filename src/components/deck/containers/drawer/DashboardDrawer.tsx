@@ -5,7 +5,6 @@ import DrawerAppBar from "../../cartons/drawer/DrawerAppBar";
 import DrawerNav, {DrawerNavItem} from "../../cartons/navbar/DrawerNav";
 import {Outlet} from "react-router-dom";
 import {NestedRoutePath, TOKEN_ROUTE_PATHS} from "../../../../routes/routePaths";
-import {NestedRoute} from "../../../../routes/routes";
 
 const DashboardDrawer: React.FC = () => {
   const theme = useTheme();
