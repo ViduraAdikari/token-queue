@@ -13,10 +13,10 @@ const initialState: ITokenState = {
   services: null,
   counters: null,
   assignedTokens: null,
+  selectedCounter: null,
   isCheckingTokens: false,
   guest: null,
-  newTokenServiceID: null,
-  selectedCounter: null
+  newTokenServiceID: null
 }
 
 export const tokenSlice: Slice = createSlice({
