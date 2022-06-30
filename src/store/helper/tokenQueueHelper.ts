@@ -37,6 +37,11 @@ const addAssignedTokens = (previousTokens: IToken[] | null, serviceID: string, a
   return tokens.concat(assignedTokens);
 }
 
+/**
+ * update served token status immediately in local state.
+ * @param counter
+ * @param servedToken
+ */
 const updateServedTokenInCounter = (counter: ICounter | null, servedToken: IToken): ICounter | null => {
   if (!counter) {
     return null;
