@@ -5,7 +5,7 @@ import TokenNumber from "../../elements/token/TokenNumber";
 import {grey} from "@mui/material/colors";
 import TokenTypo from "../../elements/token/TokenTypo";
 import {useTheme} from "@mui/material/styles";
-import {ICounter, IToken} from "../../../../types/types";
+import {IToken} from "../../../../types/types";
 
 type TokenToServeProps = {
   token: IToken

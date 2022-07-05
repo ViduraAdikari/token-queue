@@ -1,10 +1,13 @@
 import {createSlice, PayloadAction, Slice} from "@reduxjs/toolkit";
 import {ITokenState} from "../types/tokenQueueReducerTypes";
 import {
-  IAssignedTokensPayload, IAssignedTokensRequestedPayload, ICountersPayload,
+  IAssignedTokensPayload,
+  IAssignedTokensRequestedPayload,
+  ICountersPayload,
   INewTokenServiceIDPayload,
   IPhoneNumberPayload,
-  ISelectedCounterPayload, IServedTokenPayload,
+  ISelectedCounterPayload,
+  IServedTokenPayload,
   IServicesPayload
 } from "../types/payloadTypes";
 import {addAssignedTokens, createGuest, updateServedTokenInCounter} from "../helper/tokenQueueHelper";

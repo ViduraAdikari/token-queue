@@ -1,7 +1,6 @@
 import React, {FormEvent, useEffect, useState} from 'react';
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 
 type InputTextProps = {
@@ -27,7 +26,7 @@ const MainInputForm: React.FC<MainInputFormProps> = (props: MainInputFormProps) 
   const [validated, setValidated] = useState(false);
 
   useEffect(() => {
-    if(value === null) {
+    if (value === null) {
       setValidated(false);
     }
   }, [value]);

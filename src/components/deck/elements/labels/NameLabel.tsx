@@ -6,9 +6,9 @@ type NameLabelProps = {
 }
 
 const NameLabel: React.FC<NameLabelProps> = (props: PropsWithChildren<NameLabelProps>) => {
-  
+
   const {text} = props;
-  
+
   return (
     <InputLabel
       sx={{
