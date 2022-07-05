@@ -26,8 +26,10 @@ const AssignedTokens: React.FC<AssignedTokensProps> = (props: AssignedTokensProp
 
   const getRowsInGroup = (tokens: IToken[]): IGridRow[] => {
     return tokens.map((token: IToken) => {
-      const row: IGridRow = {token: token.tokenNumber, counter: token.counterID || '',
-      isNew: previousTokens.current.indexOf(token.tokenNumber) < 0 ? true : undefined};
+      const row: IGridRow = {
+        token: token.tokenNumber, counter: token.counterID || '',
+        isNew: previousTokens.current.indexOf(token.tokenNumber) < 0 ? true : undefined
+      };
       return row;
     }).sort(sortByTokenNum);
   }

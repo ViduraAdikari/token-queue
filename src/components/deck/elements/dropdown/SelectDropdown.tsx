@@ -2,7 +2,8 @@ import React from 'react';
 import Select from 'react-select';
 import {useTheme} from "@mui/material/styles";
 
-export interface ISelectOptionValue {}
+export interface ISelectOptionValue {
+}
 
 export type SelectOption<T extends ISelectOptionValue> = {
   label: string
@@ -69,7 +70,6 @@ const SelectDropdown: React.FC<SelectDropdownProps> = (props: SelectDropdownProp
       defaultValue={defaultSelection}
       isLoading={isLoading}
       isClearable={true}
-      // isSearchable={isSearchable}
       name="select-dropdown"
       options={options}
       onChange={handleChange}

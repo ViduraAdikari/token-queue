@@ -18,7 +18,7 @@ const Token: React.FC<TokenProps> = (props: TokenProps) => {
   const {token} = props;
 
   const tokenBGColor: string = grey[300];
-  const formattedDate: string = getFormattedDate(token.time,"MMMM DD, YYYY, hh:mm A");
+  const formattedDate: string = getFormattedDate(token.time, "MMMM DD, YYYY, hh:mm A");
 
   return (
     <Paper elevation={3} sx={{

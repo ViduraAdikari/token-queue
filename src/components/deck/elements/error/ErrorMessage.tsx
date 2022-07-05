@@ -1,4 +1,4 @@
-import React, {PropsWithChildren} from 'react';
+import React from 'react';
 import Stack from "@mui/material/Stack";
 import DashboardContainer from "../containers/DashboardContainer";
 import Typography from "@mui/material/Typography";

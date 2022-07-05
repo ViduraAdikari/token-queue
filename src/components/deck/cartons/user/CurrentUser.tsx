@@ -25,7 +25,7 @@ const CurrentUser: React.FC<CurrentUserProps> = (props: CurrentUserProps) => {
 
       <Stack direction="row" spacing={2}>
         {guest.avatar && <Avatar avatarIcon={guest.avatar}/>}
-        <NameLabel text={label ? label: guest.phone}/>
+        <NameLabel text={label ? label : guest.phone}/>
       </Stack>
 
     </Stack>

@@ -10,7 +10,7 @@ export type NestedRoutePath = {
 
 const DASHBOARD_NESTED: NestedRoutePath = {
   token: {path: 'get-a-token', label: 'Get a Token', isNavLink: false},
-  queue: {path: 'display-queue', label: 'Display Queue' ,isNavLink: true},
+  queue: {path: 'display-queue', label: 'Display Queue', isNavLink: true},
   agent: {path: 'agent-counter', label: 'Agent Counter', isNavLink: true},
 }
 
