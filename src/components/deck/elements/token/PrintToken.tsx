@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import Button from "@mui/material/Button";
 import {Navigate} from "react-router-dom";
 import {TOKEN_ROUTE_PATHS} from "../../../../routes/routePaths";
-import {setTokenIssued} from '../../../../store/reducers/tokenQueueReducer';
 import PrintIcon from '@mui/icons-material/Print';
 
 const PrintToken: React.FC = () => {

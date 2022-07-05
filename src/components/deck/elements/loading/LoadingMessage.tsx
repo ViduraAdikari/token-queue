@@ -6,9 +6,9 @@ type LoadingMessageProps = {
 }
 
 const LoadingMessage: React.FC<LoadingMessageProps> = (props: PropsWithChildren<LoadingMessageProps>) => {
-  
+
   const {message} = props;
-  
+
   return (
     <Typography>{message}...</Typography>
   )
