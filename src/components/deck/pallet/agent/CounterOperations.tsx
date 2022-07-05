@@ -103,7 +103,7 @@ const CounterOperations: React.FC<CounterOperationsProps> = (props: CounterOpera
         </Box>
 
         <MainInputForm buttonText="Submit"
-                       value={servedTokenNumber ? servedTokenNumber + '': null}
+                       value={servedTokenNumber ? servedTokenNumber + '' : null}
                        inputTextProps={{
                          name: 'token',
                          label: 'served token number',

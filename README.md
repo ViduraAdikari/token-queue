@@ -14,20 +14,20 @@ If there is any trouble downloading the spec. try again or please contact me for
 2. Find the NodeJS backend required to run this app here:\
   https://github.com/ViduraAdikari/token-queue-backend.git
 
-`Run npm install for both apps`
+Run `npm install` for both apps
 
 ## Way to Check
 
 Best way to check is:
-- Open 3 browser tabs for [http://localhost:3000](http://localhost:3000)
+Open 3 browser tabs for [http://localhost:3000](http://localhost:3000)
 1. For customers to get tokens.
 2. To display assigned tokens.
 3. For counter agent to enter served token number.
 
 #####Backend will initiate with 7 Counters.
-2 x Counters - Billing / Payments.\
-4 x Counters - Document Services.\
-1 x Counter - Consultation.
+2 x Counters - Billing / Payments. (Counter 1 & 2)\
+4 x Counters - Document Services. (Counter 3, 4, 5, & 6)\
+1 x Counter - Consultation. (Counter 7 only)
 
 ## Functions
 

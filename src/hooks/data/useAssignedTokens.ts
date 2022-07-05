@@ -32,7 +32,7 @@ export const useAssignedTokens = (serviceID: string, isCheckingTokens: boolean) 
       checkAssignedTokens();
 
       //check every [x] seconds
-      interval = setInterval( () => {
+      interval = setInterval(() => {
         checkAssignedTokens();
       }, 5000);
 
@@ -44,5 +44,5 @@ export const useAssignedTokens = (serviceID: string, isCheckingTokens: boolean) 
     }
   }, [serviceID]);
 
-  return { isRequested, checkedServiceID: serviceID , assignedTokens};
+  return {isRequested, checkedServiceID: serviceID, assignedTokens};
 }
