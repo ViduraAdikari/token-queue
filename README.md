@@ -11,7 +11,7 @@ contact me for help.
 
 ## Setup
 
-* Checkout to `release/prototype_v1 branch` in both frontend and backend.
+Checkout to `release/prototype_v1 branch` in both frontend and backend.
 
 1. This is the ReactJS frontend application.
 2. Find the NodeJS backend required to run this app here:\
