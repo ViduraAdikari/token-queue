@@ -28,6 +28,7 @@ Open 3 browser tabs for [http://localhost:3000](http://localhost:3000)
 3. For counter agent to enter served token number.
 
 #### Backend will initiate with 7 Counters.
+
 2 x Counters - Billing / Payments. (Counter 1 & 2)\
 4 x Counters - Document Services. (Counter 3, 4, 5, & 6)\
 1 x Counter - Consultation. (Counter 7 only)
