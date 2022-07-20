@@ -6,9 +6,12 @@ Visitor Queue Management with Tokens.
 
 Download the [Token-System-Spec.pdf](https://s3.amazonaws.com/cdn.vidura/token/Token-System-Spec.pdf)
 
-If there is any trouble downloading the spec. try again or please contact me for help.
+If there is any trouble downloading the spec. try again or please do not hesitate to 
+contact me for help.
 
 ## Setup
+
+Checkout to `release/prototype_v1 branch` in both frontend and backend.
 
 1. This is the ReactJS frontend application.
 2. Find the NodeJS backend required to run this app here:\
@@ -24,7 +27,8 @@ Open 3 browser tabs for [http://localhost:3000](http://localhost:3000)
 2. To display assigned tokens.
 3. For counter agent to enter served token number.
 
-#####Backend will initiate with 7 Counters.
+#### Backend will initiate with 7 Counters.
+
 2 x Counters - Billing / Payments. (Counter 1 & 2)\
 4 x Counters - Document Services. (Counter 3, 4, 5, & 6)\
 1 x Counter - Consultation. (Counter 7 only)
